@@ -40,6 +40,8 @@ struct GetAllNamesClient: Sendable {
 
 extension GetAllNamesClient: DependencyKey {
     static var liveValue: GetAllNamesClient {
+        // Neither putting the dependency here, not in the closure helps
+        //@Dependency(\.namesClient) var client
         .init(
             getAllNames: {
                 @Dependency(\.namesClient) var client
