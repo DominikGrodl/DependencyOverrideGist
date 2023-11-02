@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		DD54C4DE2AF3EC8400DD39CE /* DependencyOverrideTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54C4DD2AF3EC8400DD39CE /* DependencyOverrideTestApp.swift */; };
-		DD54C4E02AF3EC8400DD39CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54C4DF2AF3EC8400DD39CE /* ContentView.swift */; };
 		DD54C4E22AF3EC8500DD39CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD54C4E12AF3EC8500DD39CE /* Assets.xcassets */; };
 		DD54C4E52AF3EC8500DD39CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD54C4E42AF3EC8500DD39CE /* Preview Assets.xcassets */; };
+		DD54C4ED2AF3EC9D00DD39CE /* Dependencies in Frameworks */ = {isa = PBXBuildFile; productRef = DD54C4EC2AF3EC9D00DD39CE /* Dependencies */; };
+		DD54C4F02AF3ECBB00DD39CE /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = DD54C4EF2AF3ECBB00DD39CE /* SwiftUINavigation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DD54C4DA2AF3EC8400DD39CE /* DependencyOverrideTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DependencyOverrideTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD54C4DD2AF3EC8400DD39CE /* DependencyOverrideTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyOverrideTestApp.swift; sourceTree = "<group>"; };
-		DD54C4DF2AF3EC8400DD39CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DD54C4E12AF3EC8500DD39CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD54C4E42AF3EC8500DD39CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -26,6 +26,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD54C4F02AF3ECBB00DD39CE /* SwiftUINavigation in Frameworks */,
+				DD54C4ED2AF3EC9D00DD39CE /* Dependencies in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				DD54C4DD2AF3EC8400DD39CE /* DependencyOverrideTestApp.swift */,
-				DD54C4DF2AF3EC8400DD39CE /* ContentView.swift */,
 				DD54C4E12AF3EC8500DD39CE /* Assets.xcassets */,
 				DD54C4E32AF3EC8500DD39CE /* Preview Content */,
 			);
@@ -83,6 +84,10 @@
 			dependencies = (
 			);
 			name = DependencyOverrideTest;
+			packageProductDependencies = (
+				DD54C4EC2AF3EC9D00DD39CE /* Dependencies */,
+				DD54C4EF2AF3ECBB00DD39CE /* SwiftUINavigation */,
+			);
 			productName = DependencyOverrideTest;
 			productReference = DD54C4DA2AF3EC8400DD39CE /* DependencyOverrideTest.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,10 @@
 				Base,
 			);
 			mainGroup = DD54C4D12AF3EC8400DD39CE;
+			packageReferences = (
+				DD54C4EB2AF3EC9D00DD39CE /* XCRemoteSwiftPackageReference "swift-dependencies" */,
+				DD54C4EE2AF3ECBB00DD39CE /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
 			productRefGroup = DD54C4DB2AF3EC8400DD39CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +146,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD54C4E02AF3EC8400DD39CE /* ContentView.swift in Sources */,
 				DD54C4DE2AF3EC8400DD39CE /* DependencyOverrideTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +352,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DD54C4EB2AF3EC9D00DD39CE /* XCRemoteSwiftPackageReference "swift-dependencies" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-dependencies.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		DD54C4EE2AF3ECBB00DD39CE /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DD54C4EC2AF3EC9D00DD39CE /* Dependencies */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD54C4EB2AF3EC9D00DD39CE /* XCRemoteSwiftPackageReference "swift-dependencies" */;
+			productName = Dependencies;
+		};
+		DD54C4EF2AF3ECBB00DD39CE /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DD54C4EE2AF3ECBB00DD39CE /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DD54C4D22AF3EC8400DD39CE /* Project object */;
 }
